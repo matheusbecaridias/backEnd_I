@@ -1,0 +1,9 @@
+Crie uma database chamada ProvaBim que contenha uma tabela
+chamada Disciplinas com os campos:
+codDisciplina int autoincremento chave primária
+descricao varchar 80 não nulo
+carga Horaria varchar 6
+nome Professor varchar 80
+**** Inclua 3 registros nessa tabela ****
+01 - Faça um programa back-end, usando a linguagem JS que mostre o conteúdo da tabela Disciplinas na tela do VS-Code
+02-Inclua a disciplina: Linguagem de Programação back-end com 120 horas de carga horária e Pedro Vieira como professor, via back-end na tabela Disciplinas da database ProvaBim

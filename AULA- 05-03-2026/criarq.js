@@ -1,0 +1,2 @@
+import * as fs from "fs";
+fs.writeFileSync ("matheus.txt","O que não lhe mata, te fortalece Friedrich Nietzsche. Nietzsche foi um filósofo, poeta, músico e filólogo alemão do século XIX. Ele é conhecido por suas ideias sobre a vontade de poder, o eterno retorno e a morte de Deus. Nietzsche é considerado um dos pensadores mais influentes da filosofia ocidental e suas obras continuam a ser estudadas e debatidas até hoje.");
