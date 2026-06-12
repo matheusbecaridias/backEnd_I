@@ -1,0 +1,524 @@
+			 LINGUAGEM PYTHON
+PROF. FERNANDO MARQUES
+1
+
+A história do Python remonta aos anos 80, quando o desenvolvedor Guido van Rossum começou a trabalhar em uma nova linguagem de programação - Amoeba. Sua motivação era criar uma linguagem fácil de ler e escrever, com uma sintaxe clara e intuitiva.
+No início, Python foi desenvolvido como um projeto pessoal de van Rossum, mas logo atraiu a atenção e o interesse de outros programadores. Com o apoio da comunidade, a linguagem começou a evoluir e se tornar cada vez mais poderosa.
+Finalmente, em fevereiro de 1991, Guido van Rossum lançou a primeira versão pública do Python, marcando oficialmente o nascimento dessa linguagem. Desde então, Python tem percorrido um longo caminho, ganhando popularidade e se tornando uma ferramenta essencial para programadores de todo o mundo.
+Ao longo do desenvolvimento do Amoeba, Guido percebeu a necessidade de uma linguagem mais robusta e decidiu iniciar o desenvolvimento de uma nova linguagem, que inicialmente chamou de “Python”, inspirado pelo seu amor pelo grupo de comédia britânico Monty Python.
+2
+
+O interpretador Python já vem pré instalado em alguns Sistemas Operacionais, como Linux e IOS-Mac porém, no Windows devemos instalar por nossa conta.
+Para instalar o Python no Windows basta entrarmos no site www.python.org e lá irmos na guia downloads. 
+
+
+
+3
+
+Instalando o Python 3 no Windows
+
+Para instalar o Python no seu sistema operacional Windows, você precisa baixar o instalador. Acesse o site oficial neste link (https://www.python.org/downloads/) e clique em download
+Faça o download do instalador executável do Windows (32 ou 64 bits) e clique duas vezes nele para iniciar o assistente de instalação do python
+O processo de instalação é bem simples.
+1.- Marque a opção "Add Python to PATH"
+2.- Clique em "Install Now“
+Para instalar o PIP no Windows: py -m ensurepip --default-pip
+
+Csso o pip não funcione: py -c "import os, sys; print(os.path.join(sys.prefix, 'Scripts'))" daí copie o path e cole nas variáveis de ambiente
+Abre um terminal LINUX
+sudo apt install python3-pip
+sudo apt-get update 
+
+
+Para verificar se a instalação está ok, digite o seguinte comando:  python --version
+Agora digite pip --version 
+
+
+Instalação do PIP no LINUX
+4
+
+Desenvolvimento de scripts de testes e praticidade
+
+Diversas IDEs (Ambiente de Desenvolvimento Integrado, do inglês Integrated Development Environment) surgiram ou se adaptaram para atender às necessidades de programadores. 
+
+Um exemplo é o Jupyter Notebook, uma aplicação web open-source que nos dá suporte para criação e compartilhamento de documentos que podem conter códigos, equações, e scripts de visualização de dados. Outra IDE muito utilizada e madura é o Pycharm, que conta com versão paga, gratuita para a comunidade e estudantil (esta última com mais funcionalidade que a gratuita).IDLE também se encaixa na descrição.
+
+Utilizaremos o VSCode: uma ferramenta gratuita, open-source, leve e também muito utilizada na comunidade de desenvolvedores.
+
+
+
+5
+
+
+Estrutura de Repetição FOR
+
+
+
+
+O comando FOR, basicamente é utilizado para percorrer listas (Arrays), repare que utilizamos a sintaxe reduzida do for, por ser mais elegante.
+
+Abra a pasta do seu novo projeto com o VS Code e crie um arquivo qualquer com a extensão py 
+
+Faça um programa em python que defina uma lista com 4 nomes: Pedro, Maria, Jaime e Joana – Mostre então uma saudação para cada um deles, tipo: “Bem-vindo Pedro!”
+
+
+6
+
+
+f-string (formatted string literal)
+É a forma mais moderna, legível e rápida de formatar strings no Python.
+Introduzida no Python 3.6, ela se tornou o padrão recomendado para concatenar/interpolar variáveis e expressões dentro de strings.
+Sintaxe Básica: Basta colocar a letra f (ou F) antes das aspas:
+
+
+
+
+Interagindo com o usuário – INPUT
+O input() é uma função embutida do Python que permite ler dados digitados pelo usuário durante a execução do programa. Ele sempre retorna o valor como string (texto)
+
+
+7
+
+Crie um programa em Python que peça ao usuário as seguintes informações:
+Nome completo    -    Idade (número inteiro)    -    Cidade onde mora    -    Profissão    -    Hobby favorito
+Depois, usando apenas f-strings, monte e imprima uma mensagem bem organizada e amigável com todas essas informações.
+A saída final deve ficar exatamente assim (substituindo com os dados digitados pelo usuário):
+====================================
+        MENSAGEM PERSONALIZADA
+====================================
+
+Olá, meu nome é Ana Silva!
+
+Tenho 28 anos e moro em Londrina.
+Atualmente trabalho como Desenvolvedora de Software.
+No meu tempo livre, gosto muito de ler livros de ficção científica.
+
+Resumo da sua vida: Ana Silva é uma Desenvolvedora de Software de 28 anos que mora em Londrina e adora ler livros de ficção científica.
+====================================
+O programa deve limpar os espaços em branco extras que o usuário possa digitar (use .strip()).A mensagem deve ter o visual bonito com linhas de separação (como no exemplo acima).A idade deve aparecer corretamente como número (sem aspas).
+C:\MyProjects\MyPyProjects\CursoPython\ExFStringInput
+8
+
+nome = input("Digite seu nome completo: ").strip()
+idade = int(input("Digite sua idade: "))
+cidade = input("Digite a cidade onde você mora: ").strip()
+profissao = input("Digite sua profissão: ").strip()
+hobby = input("Digite seu hobby favorito: ").strip()
+print("\n" + "=" * 40)
+print("     MENSAGEM PERSONALIZADA")
+print("=" * 40)
+print(f"\nOlá, meu nome é {nome}!")
+print(f"Tenho {idade} anos e moro em {cidade}.")
+print(f"Atualmente trabalho como {profissao}.")
+print(f"No meu tempo livre, gosto muito de {hobby}.")
+print()  
+print(f"Resumo da sua vida: {nome} é um(a) {profissao} de {idade} anos que mora em {cidade} "
+print(f"e adora {hobby}.")
+print("=" * 40)
+9
+
+
+Usando Elementos Gráficos
+
+Abra sua pasta de projetos Python no VS-Code e crie um arquivo chamado ex1.py
+(C:\MyProjects\MyPyProjects\exPyQt01\ex1.py)
+
+
+
+import sys
+from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QLabel
+from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QCursor
+def funcao1():
+   label.setText('Botão pressionado')
+   label.adjustSize()
+app = QApplication(sys.argv)
+janela = QWidget()
+Para instalar o PyQt6, vc precisa ter o Python e o PIP – digite:         pip install PyQt6
+No Linux:    sudo apt update e depois: sudo apt install python3-pyqt6
+10
+
+janela.resize(800,600)
+janela.setWindowTitle('Primeira Janela')
+btn = QPushButton('Botao 1', janela)
+btn.setGeometry(100, 100, 150, 80)
+btn.clicked.connect(funcao1)
+
+btn.setStyleSheet("""
+    QPushButton {
+        background-color: #0078D7;   /* azul mais bonito */
+        color: white;
+        border: none;                /* importante! */
+        padding: 8px 16px;
+        border-radius: 4px;
+    }
+11
+
+
+    QPushButton:hover {
+        background-color: #106EBE;
+    }
+    
+    QPushButton:pressed {
+        background-color: #005A9E;
+    }
+""")
+btn.setCursor(Qt.CursorShape.PointingHandCursor)
+
+12
+
+label = QLabel("Texto Qualquer", janela)
+label.move(400,100)
+label.setStyleSheet('font-size:30px')
+janela.show()
+app.exec()
+
+
+13
+
+Depois de vermos como funciona a parte gráfica diretamente no código, vamos utilizar uma ferramenta Gráfica para nos auxiliar. 
+Para instalar o PySide6:
+PySide6 x PyQt6
+O PyQt é independente e roda só até o Python 3.9, já o PySide é da própria Qt e roda no 3.12.
+WINDOWS
+# Abra o Prompt de Comando (terminal do VS-Code) ou PowerShell e crie o ambiente virtual:
+python -m venv meu_ambiente
+meu_ambiente\Scripts\activate 
+
+14
+
+LINUX
+	
+Primeiro vc deverá habilitar o Ambiente Virtual no Linux: 
+apt install python3.12-venv
+
+Agora digite:
+python3 -m venv meu_ambiente
+source meu_ambiente/bin/activate
+
+sudo apt install libxcb-cursor0
+
+O UV
+15
+
+UV é uma ferramenta moderna e extremamente rápida para gerenciar pacotes e projetos Python.
+Criada pela Astral, a mesma empresa que criou o Ruff (o linter/formatter mais rápido do Python).
+
+
+Alternativa Windows  (+moderna +rápida)  -  Esse é o método oficial recomendado pela Astral.
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+.venv\Scripts\activate - Para ativar
+Alternativa Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh         ou caso não tenha o curl
+wget -qO- https://astral.sh/uv/install.sh | sh
+
+USO:		uv venv
+.venv\Scripts\activate
+16
+
+
+
+
+3. Dica importante
+Se você usa VS Code, é muito fácil ver qual ambiente está sendo usado:
+Pressione Ctrl + Shift + P
+Digite "Python: Select Interpreter"
+Ele vai mostrar a lista dos ambientes que o VS Code encontrou
+
+Rode então: pip install PySide6
+Para abrir:  pyside6-designer
+
+Para instalar o Qt Designer:
+https://build-system.fman.io/qt-designer-download
+
+
+
+
+
+17
+
+
+Criando a sua Janela Principal
+Instalado o Qt Designer, execute-o e crie a sua MainWindow
+
+Remova então o MenuBar e o StatusBar (não utilizaremos agora) – Clique com o direito em cima e embaixo e remova.
+
+Na caixa de pesquisas procure por frame e insira dois frames na tela e deixe-os com Lay Out Horizontal;
+Mude o nome do frame da esquerda para leftContainer e o da direita para mainContainer
+Insira mais 3 frames no mainContainer com lay out Vertical.
+
+
+18
+
+Renomeie os frames para frmHeader – frmMain – frmFooter
+Insira um PushButton e uma Label no frm_header e deixe com lay out horizontal;
+Insira também uma Label no frmFooter e mude o texto para SysDev
+
+Renomeie o PushButton para btnAlternar
+Deixe o frmMain em sizePolicy, na opção Política vertical Expanding
+
+Vamos colocar então 2 Frames no lado esquerdo e deixá-los com lay out vertical; 
+Insira um Tool Box no frame de baixo (onde colocaremos os botões) - lay out horizontal;
+Um Label no frame de cima, colocando o texto com o nome da empresa (ou logo): SysDev - lay out vertical;
+
+No Object Inspector, em leftContainer, deixe a largura do Maximum Size como 200;
+
+19
+
+Insira 4 PushButton na toolBox e renomeie para Home - Cadastrar - Contatos - Sobre
+
+e aplique um  lay out vertical;
+
+Embaixo do Sobre, insira um Vertical Spacer
+
+Criando as Pastas
+
+Insira 1 Stacked Widget no frmMain  e lay out vertical no frmMain;
+Renomeie o Stacked Widget para Pages e as páginas para pg_home e pg_cadastrar
+Clique com o direito no Pages e insira mais duas páginas e renomeie-as para pg_contatos e pg_sobre;
+
+
+20
+
+Inserindo Imagens
+
+Aqui entra uma questão, vc até pode inserir imagens .png ou .jpg diretamente no projeto, porém na distribuição elas poderão sumir, então o correto é inserir via recursos:
+
+Abra seu projeto no Qt Designer
+Abra o Navegador de Recursos
+Clique na chave ou lápis
+Clique em Novo arquivo de recurso
+Dê um nome com extensão .qrc (ex. myrecursos.qrc)
+Salvar
+Clique em Adicionar Prefixo e insira suas imagens.
+
+Insira uma Label na pg_home e renomeie para logo;
+Clique com o direito no logo e em Alterar Texto Rico (Change Rich Text)
+Clique então em Inserir Imagem e insira o LOGO
+
+21
+
+Página Cadastrar
+
+Insira uma Tab Widget na página Cadastrar deixando o lay out vertical;
+Coloque Cadastro na propriedade CurrentTabText e Empresas na 2ª aba;
+
+Insira uma Table Widget dentro da Tab Widget;
+Ao lado da table insira um Frame e em cima, uma Label com o título EMPRESAS, tamanho 22 Negrito Centralizado;
+No frame insira 3 botões: Gerar Excel - Alterar e Excluir e já renomeie no Object Inspector e lay out vertical;
+
+Mantenha selecionado o Frame e selecione a Tab deixe o lay out horizontal;
+
+Coloque um espaçador vertical embaixo do excluir.
+
+
+
+ 
+22
+
+Sua tela deverá estar com essa aparência:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+23
+
+Na Aba Empresas:
+Para adicionar as colunas, basta dar 2 cliques na tabela e add… Adicione:
+NOME  -  LOGRADOUDO  -  NÚMERO  -  BAIRRO  -  MUNICÍPIO  -  TELEFONE  -  E-MAIL 
+
+Na Aba Cadastros:
+ Insira um Frame e dentro dele uma Label e 11 Line Edit’s no Frame. Coloque os placeholders e distribua-os (use a distribuição em grade no final), como segue:
+
+
+
+
+
+
+
+
+
+
+
+
+
+24
+
+Insira um PushButton embaixo do Frame e aplique um layout vertical. Clique com o direito no pushbutton e deixe alinhado horizontalmente.
+Selecione a Label e clique com o direito e Alterar texto rico (chance rich text) e centralize.
+
+
+
+
+
+
+
+
+
+
+
+25
+
+Página Contatos
+
+Insira uma Label, acesse o texto rico e insira o telefone da empresa, email, insta e YT…
+Coloque o título (CONTATOS)
+
+
+
+26
+
+Página Sobre
+
+Insira duas Label, a primeira escreva SOBRE e na 2ª acesse o texto rico e insira o texto:
+
+Este sistema faz consulta do CNPJ utilizando API da Receita Federal e faz o cadastro em um banco de dados. O objetivo deste sistema é ensinar como utilizar Python e o QT para desenvolver aplicações modernas e funcionais.
+
+Com a Label selecionada, procure no editor de propriedades por Wrap e marque a opção wordWrap.
+Clique fora da Label e aplique layout vertical.
+27
+
+Vamos aplicar então um background-color para a nossa aplicação:
+
+Clique com o direito em MainWindows em seguida em AlterarFolhaEstilo;
+Adicionar Cor e background-color.
+
+Clique com o direito em centralwidget em seguida em AlterarFolhaEstilo e insira:
+
+*{
+     border: none;
+}
+
+QLabel{
+     color: rgb(255, 255, 255);
+
+}
+ 
+
+28
+
+Selecione o frame_2 - é o que envolve os botões e páginas - Nas folhas de estilo dele insira:
+
+QFrame{
+   background-color: rgb(65, 65, 65);
+}
+
+QToolBox{
+   text-align: left;
+   background-color: rgb(228, 254, 255);
+}
+
+QToolBox::tab{
+   border-radius: 5px;
+   text-align: left;
+   background-color: rgb(194, 232, 255);
+}
+
+29
+
+Selecione o Tool Box (do frame_2) - Nas folhas de estilo dele insira:
+
+QPushButton:hover {
+   background-color: rgb(65, 65, 65);
+   border-top-left-radius: 15px;
+}
+
+QPushButton {
+   color: rgb(255, 255, 255);
+}
+
+30
+
+Selecione o botão Home mude seu nome para btn_home e coloque sua altura mínima em 30 e a font-size em 11;
+
+ FAÇA ISSO PARA CADASTRAR - CONTATOS E SOBRE
+
+
+Ainda posicionado em Home - Mude o Cursor para Mão Apontando (Repita para os outros botões).
+
+
+31
+
+AQUI FICA UM GAP
+
+FALTAM N CONFIGURAÇÕES ESTÉTICAS DA NOSSA INTERFACE
+
+32
+
+EXECUTANDO O SISTEMA
+
+Vamos criar primeiro o nosso arquivo main.py
+No seu ambiente virtual que já deve ter a biblioteca PySide6, vamos instalar os pacotes Requests  e o Pandas (gerar o arquivo excel):
+
+pip install requests
+
+pip install pandas
+
+E também o openpyxl (dependência do pandas para gerar o xlsx)
+
+pip install openpyxl 
+33
+
+O próximo passo é converter alguns arquivos para o Python:
+
+pyside6-rcc myrecursos.qrc -o myrecursos_rc.py
+pyside6-uic main_window.ui  -o  ui_main.py
+
+Certo! Agora vamos ao arquivo main.py:
+
+
+
+
+34
+
+from PySide6.QtCore import QCoreApplication
+from PySide6.QtGui import QIcon
+from PySide6.QtWidgets import (QApplication, QMainWindow)
+from ui_main import Ui_MainWindow
+import sys
+
+class MainWindow(QMainWindow, Ui_MainWindow):
+    def __init__(self):
+        super(MainWindow, self).__init__()
+        self.setupUi(self)
+        self.setWindowTitle("SysDev - Sistema de cadastro de empresas")
+        appIcon = QIcon(u"")
+        self.setWindowIcon(appIcon)
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    app.exec()
+Aqui entra a POO
+35
+
+
+
+36
+
+
+
+37
+
+
+
+38
+
+OBRIGADO
+PESSOA@EXAMPLE.COM
+
+
+39
